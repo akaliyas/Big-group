@@ -33,6 +33,10 @@ LinkList* creat(int n) {
 	return head;
 }
 void change(LinkList* list, int n) {
+	if (list == NULL) {
+		printf_s("The list is empty.\n");
+		return;
+	}
 	LinkList* t = list;
 	int i = 0;
 	while (i < n && t != NULL) {
@@ -48,6 +52,10 @@ void change(LinkList* list, int n) {
 	}
 }
 void delet(LinkList* list, int n) {
+	if (list == NULL) {
+		printf_s("The list is empty.\n");
+		return;
+	}
 	LinkList* t = list, *in=list;
 	int i = 0;
 	while (i < n && t != NULL) {
@@ -64,6 +72,10 @@ void delet(LinkList* list, int n) {
 	}
 }
 void insert(LinkList* list, int n) {
+	if (list == NULL) {
+		printf_s("The list is empty.\n");
+		return;
+	}
 	LinkList* t = list, * in;
 	int i = 0;
 	while (i < n && t != NULL) {
@@ -82,6 +94,10 @@ void insert(LinkList* list, int n) {
 	}
 }
 void destroyed(LinkList* list) {
+	if (list == NULL) {
+		printf_s("The list is empty.\n");
+		return;
+	}
 	LinkList* h = list,*d;
 	while (h->next != NULL) {
 		d = h;
@@ -90,6 +106,10 @@ void destroyed(LinkList* list) {
 	}
 }
 void getnode(LinkList* list, int n) {
+	if (list == NULL) {
+		printf_s("The list is empty.\n");
+		return;
+	}
 	int i=0;
 	LinkList* p = list;
 	while (p->next && i < n) {
@@ -103,6 +123,10 @@ void getnode(LinkList* list, int n) {
 	else puts("节点为空");
 }
 void searchnode(LinkList* list, int key) {
+	if (list == NULL) {
+		printf_s("The list is empty.\n");
+		return;
+	}
 	LinkList* p = list->next; int t = 1;
 	while (p && p->score != key) {
 		p = p->next; t++;
@@ -114,11 +138,14 @@ void searchnode(LinkList* list, int key) {
 	else puts("查找失败！");
 }
 void printlist(LinkList *list) {
+	if (list == NULL) {
+		printf_s("The list is empty.\n");
+		return;
+	}
 		LinkList* p = list;
 		for (p = list->next; p != NULL; p = p->next) {
 			printf("%d ", p->score);
 		}
-	
 }
 
 int LLL = 1;
@@ -148,7 +175,7 @@ void Mainmenu(void)
 	printf("\t   *                                                          *\n");
 	printf("\t   *      销毁链表 请按 7                                     *\n");
 	printf("\t   *			                                                *\n");
-	printf("\t   *      打印链表 请按 8                                     *\n");
+	printf("\t   *      打印当前链表 请按 8                                 *\n");
 	printf("\t   ************************************************************\n\n");
 }
 
